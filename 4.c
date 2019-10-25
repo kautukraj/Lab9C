@@ -8,7 +8,7 @@ struct Node
 struct Node* head;
 
 void insert(int,int);
-void print();
+void print(int);
 void del();
 
 void insert(int ins, int pos)
@@ -31,12 +31,17 @@ void insert(int ins, int pos)
 	temp2->next = temp1;
 }
 
-void print()
+void print(int n)
 {
+	int c=0;
 	struct Node* tmp = head;
 	while (tmp!=NULL)
 	{
+		if (c==n-1)
+		printf("%d-->NULL",tmp->data);
+		else
 		printf("%d-->",tmp->data);
+		c++;
 		tmp = tmp->next;
 	}	
 }
@@ -53,7 +58,7 @@ int main()
     	scanf("%d",&ins);
 		insert(ins,i+1);
 	}
-    print();
+    print(n);
     /* del();
     print(); */ 
     
